@@ -18,7 +18,7 @@ app.use(function (req, res, next) {
 
 function execSQLQuery(sqlQry, res) {
     const connection = mysql.createConnection({
-        host: "www.db4free",
+        host: "db4free.net",
         user: "cdahts1",
         port: "3306",
         password: "br4s1l2018",
