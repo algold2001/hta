@@ -48,10 +48,8 @@ app.get('/usuario/:id', (req, res) => {
 
 app.get('/logar/:id/:senha', (req, res) => {
     let filter = '';
-    if (req.params.id)
-        filter = ' where CodUsu=' + parseInt(req.params.id);
-    if (req.params.senha)
-        filter = filter + ' and	Senha=' + req.params.senha;
+    if ((req.params.id) && (req.params.senha))
+        filter = ' where CodUsu=' + parseInt(req.params.id) + ' and	Senha=' + req.params.senha;
     execSQLQuery('select CodUsu, Nome from Usuario ' + filter, res);
 });
 
