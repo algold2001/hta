@@ -18,7 +18,7 @@ app.use(function (req, res, next) {
 
 function execSQLQuery(sqlQry, res) {
     const connection = mysql.createConnection({
-        host: "db4free.net",
+        host: "https://www.db4free.net",
         user: "cdahts1",
         port: "3306",
         password: "br4s1l2018",
@@ -48,7 +48,7 @@ app.get('/usuario/:id', (req, res) => {
 
 
 
-var server = app.listen(3001, "0.0.0.0", function () {
+var server = app.listen(3001, "https://htsnode.herokuapp.com", function () {
     var host = server.address().address;
     var port = server.address().port;
     console.log("Servidor Iniciado na http://%s:%s", host, port);
