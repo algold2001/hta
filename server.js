@@ -46,6 +46,15 @@ app.get('/usuario/:id', (req, res) => {
     execSQLQuery('select CodUsu, Nome from Usuario ' + filter, res);
 });
 
+app.get('/logar/:id/:senha', (req, res) => {
+    let filter = '';
+    if (req.params.id)
+        filter = ' where CodUsu=' + parseInt(req.params.id);
+    if (req.params.senha)
+        filter = ' and	Senha=' + req.params.senha;
+    execSQLQuery('select CodUsu, Nome from Usuario ' + filter, res);
+});
+
 
 var server = app.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
